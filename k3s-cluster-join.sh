@@ -3,7 +3,7 @@ read SECRET
 echo "Enter the ip for the master of the cluster"
 read ipToMaster
 
-if [ $SECRET = "" ] || [ $ipToMaster = "" ]
+if [[ $SECRET = "" ]] || [[ $ipToMaster = "" ]]
 then
 echo "Token or IP was left empty try running the script again"
 exit 1
