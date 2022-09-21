@@ -1,7 +1,7 @@
 echo "enter your join token for the k3s cluster"
 read SECRET
 
-if [[ $SECRET = "" ]]
+if [ -z "$SECRET" ]
 then
 echo "token empty"
 exit 1
