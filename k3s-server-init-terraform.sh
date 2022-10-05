@@ -1,4 +1,3 @@
-echo "enter your join token for the k3s cluster"
 SECRET=$1
 
 if [ -z "$SECRET" ]
@@ -14,6 +13,5 @@ sudo apt-get update -y
 sudo apt-get install helm -y
 clear
 echo -e "Use this token to join your other nodes to this cluster \n$SECRET\n"
-echo -e "Use the local ip of this master node when running the cluster-join.sh \n"
 ip -br a
 fi
