@@ -13,7 +13,6 @@ echo "Some variables were not filled. Example: sh shadowsocks-rust-docker-init.s
 else
 # Install docker
 sudo apt update
-sudo apt upgrade -y
 sudo apt install docker.io -y
 
 # Creating path for shadowsocks-rust-server at /etc/shadowsocks-rust-data/
