@@ -8,7 +8,7 @@ sudo apt install docker.io -y
 mkdir -p /etc/x-ui/{db,cert}
 
 #Cd to /etc/x-ui/cert to create the key.pem and cert.pem
-cd /etc/x-ui/cert
+cd ${pwd}/etc/x-ui/cert
 openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout key.pem -out cert.pem -subj "/C=/ST=/L=/O=/OU=/CN="
 
 #Creating the docker ct with x-ui
