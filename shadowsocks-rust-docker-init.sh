@@ -6,6 +6,11 @@ port=$1
 password=$2
 dns=$3
 
+# Validate if all the variables are filled
+if [ -z "$port" ] || [ -z "$password" ] || [ -z "$dns" ]
+then
+echo "Some params were not filled. Example: sh shadowsocks-rust-docker-init.sh port password dns"
+else
 # Install docker
 sudo apt update
 sudo apt upgrade -y
@@ -38,3 +43,4 @@ docker run --name ssserver-rust \
   -p $port:8388/udp \
   -v /etc/shadowsocks-rust-data/config.json:/etc/shadowsocks-rust/config.json \
   -dit ghcr.io/shadowsocks/ssserver-rust:latest
+fi
