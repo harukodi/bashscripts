@@ -33,5 +33,5 @@ certbot certonly \
   -d $x_ui_hostname
 
 #Creating the docker ct with x-ui
-docker run -itd --network=host -v /etc/x-ui/db/:/etc/x-ui/ -v /etc/letsencrypt/live/:/root/cert/ --name x-ui --restart=unless-stopped enwaiax/x-ui:latest
+docker run -itd --network=host -v /etc/x-ui/db/:/etc/x-ui/ -v /etc/letsencrypt/live/$x_ui_hostname/:/root/cert/ --name x-ui --restart=unless-stopped enwaiax/x-ui:latest
 fi
