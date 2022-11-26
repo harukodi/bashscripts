@@ -38,6 +38,6 @@ docker run -itd --network=host -v /etc/x-ui/db/:/etc/x-ui/ -v /etc/letsencrypt/:
 
 #Echo cert.pem/key.pem path for the docker ct
 echo "cert.pem and key.pem path for the docker container"
-echo "/root/cert/$x_ui_hostname/fullchain.pem"
-echo "/root/cert/$x_ui_hostname/privkey.pem"
+echo "/root/cert/live/$x_ui_hostname/fullchain.pem"
+echo "/root/cert/live/$x_ui_hostname/privkey.pem"
 fi
