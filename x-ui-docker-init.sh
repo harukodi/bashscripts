@@ -33,5 +33,11 @@ certbot certonly \
   -d $x_ui_hostname
 
 #Creating the docker ct with x-ui
-docker run -itd --network=host -v /etc/x-ui/db/:/etc/x-ui/ -v /etc/letsencrypt/live/$x_ui_hostname/:/root/cert/ --name x-ui --restart=unless-stopped enwaiax/x-ui:latest
+mkdir -p /etc/x-ui/db/
+docker run -itd --network=host -v /etc/x-ui/db/:/etc/x-ui/ -v /etc/letsencrypt/:/root/cert/ --name x-ui --restart=unless-stopped enwaiax/x-ui:latest
+
+#Echo cert.pem/key.pem path for the docker ct
+echo "cert.pem and key.pem path for the docker container"
+echo "/root/cert/$x_ui_hostname/fullchain.pem"
+echo "/root/cert/$x_ui_hostname/privkey.pem"
 fi
