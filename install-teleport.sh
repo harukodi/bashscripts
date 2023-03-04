@@ -8,8 +8,7 @@ then
 echo "Example: ./install-teleport.sh example@example.com tele.example.com"
 exit 1
 else
-sudo curl https://apt.releases.teleport.dev/gpg \
--o /usr/share/keyrings/teleport-archive-keyring.asc
+sudo curl https://apt.releases.teleport.dev/gpg -o /usr/share/keyrings/teleport-archive-keyring.asc
 
 source /etc/os-release
 
