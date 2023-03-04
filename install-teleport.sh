@@ -13,9 +13,7 @@ sudo curl https://apt.releases.teleport.dev/gpg \
 
 source /etc/os-release
 
-echo "deb [signed-by=/usr/share/keyrings/teleport-archive-keyring.asc] \
-https://apt.releases.teleport.dev/${ID?} ${VERSION_CODENAME?} stable/v12" > /etc/apt/sources.list.d/teleport.list > /dev/null
-
+echo "deb [signed-by=/usr/share/keyrings/teleport-archive-keyring.asc] https://apt.releases.teleport.dev/${ID?} ${VERSION_CODENAME?} stable/v12" > /etc/apt/sources.list.d/teleport.list
 
 sudo apt-get update
 sudo apt-get install teleport
