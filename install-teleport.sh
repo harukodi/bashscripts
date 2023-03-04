@@ -13,11 +13,13 @@ sudo curl https://apt.releases.teleport.dev/gpg \
 
 source /etc/os-release
 
-echo "deb [signed-by=/usr/share/keyrings/teleport-archive-keyring.asc] https://apt.releases.teleport.dev/${ID?} ${VERSION_CODENAME?} stable/v12" > /etc/apt/sources.list.d/teleport.list
+echo "deb [signed-by=/usr/share/keyrings/teleport-archive-keyring.asc] \
+https://apt.releases.teleport.dev/${ID?} ${VERSION_CODENAME?} stable/v12" \
+| sudo tee /etc/apt/sources.list.d/teleport.list
 
 sudo apt-get update
 sudo apt-get install teleport
 
 teleport configure --acme --acme-email=$EMAIL --cluster-name=$DOMAIN_NAME | \
-sudo tee /etc/teleport.yaml > /dev/null
+sudo tee /etc/teleport.yaml
 fi
