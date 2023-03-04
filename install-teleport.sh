@@ -11,7 +11,7 @@ else
 sudo curl https://apt.releases.teleport.dev/gpg -o /usr/share/keyrings/teleport-archive-keyring.asc
 
 echo "deb [signed-by=/usr/share/keyrings/teleport-archive-keyring.asc] \
-deb https://deb.releases.teleport.dev/ stable main" | sudo tee /etc/apt/sources.list.d/teleport.list
+https://deb.releases.teleport.dev/ stable main" | sudo tee /etc/apt/sources.list.d/teleport.list
 
 sudo apt update
 sudo apt install teleport -y
