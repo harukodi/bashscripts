@@ -17,8 +17,8 @@ echo "deb [signed-by=/usr/share/keyrings/teleport-archive-keyring.asc] \
 https://apt.releases.teleport.dev/${ID?} ${VERSION_CODENAME?} stable/v12" \
 | sudo tee /etc/apt/sources.list.d/teleport.list
 
-sudo apt-get update
-sudo apt-get install teleport
+sudo apt update
+sudo apt install teleport -y
 
 teleport configure --acme --acme-email=$EMAIL --cluster-name=$DOMAIN_NAME | \
 sudo tee /etc/teleport.yaml
