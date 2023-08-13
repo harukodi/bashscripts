@@ -21,3 +21,4 @@ echo "master: $saltstack_master_ip" >> /etc/salt/minion
 # Enable the salt-minion service
 sudo systemctl enable salt-minion
 sudo systemctl start salt-minion
+sudo systemctl restart salt-minion
