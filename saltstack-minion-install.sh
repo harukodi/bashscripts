@@ -15,7 +15,7 @@ sudo apt-get install salt-minion salt-ssh -y
 
 
 # Echo the Ip for the salt-master
-echo "master: $saltstack_master_ip" >> /etc/salt/minion.d/master.conf
+echo "master: $saltstack_master_ip" >> /etc/salt/minion
 
 
 # Enable the salt-minion service
